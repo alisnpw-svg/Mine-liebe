@@ -1,0 +1,234 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    background: radial-gradient(
+        circle at top,
+        #481626,
+        #190b12 55%,
+        #080609
+    );
+
+    color: white;
+    font-family: Georgia, serif;
+    text-align: center;
+}
+
+.container {
+    width: 90%;
+    max-width: 650px;
+    margin: auto;
+    padding: 80px 15px;
+    position: relative;
+    z-index: 2;
+}
+
+.top-heart {
+    color: #e75b82;
+    font-size: 45px;
+    animation: heartbeat 1.5s infinite;
+}
+
+.small-title {
+    color: #d99aaa;
+    letter-spacing: 4px;
+    font-size: 10px;
+    margin-top: 20px;
+}
+
+h1 {
+    color: #f4c3d0;
+    font-size: 48px;
+    margin-top: 25px;
+}
+
+.subtitle {
+    color: #c7aeb6;
+    margin: 20px 0 35px;
+}
+
+button {
+    background: linear-gradient(135deg, #a83254, #e65b82);
+    border: none;
+    padding: 16px 35px;
+    color: white;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 25px #e65b82;
+}
+
+.hidden {
+    display: none;
+}
+
+#surprise {
+    margin-top: 55px;
+    animation: appear 2s ease;
+}
+
+.photo-frame {
+    padding: 8px;
+    border: 2px solid #bd526f;
+    border-radius: 18px;
+    box-shadow: 0 0 30px #812c48;
+    overflow: hidden;
+    animation: photoGlow 3s infinite alternate;
+}
+
+.photo-frame img {
+    width: 100%;
+    display: block;
+    border-radius: 12px;
+}
+
+h2 {
+    color: #f5d0db;
+    font-size: 25px;
+    line-height: 1.6;
+    margin-top: 35px;
+}
+
+h3 {
+    color: #ff789e;
+    font-size: 32px;
+    margin-top: 20px;
+    font-style: italic;
+}
+
+.ending {
+    color: #d8b0bd;
+    margin-top: 25px;
+    letter-spacing: 2px;
+}
+
+.music-box {
+    margin-top: 45px;
+    padding: 25px;
+    border: 1px solid #8b3451;
+    border-radius: 18px;
+    background: rgba(120, 25, 55, 0.15);
+}
+
+.music-box h2 {
+    font-size: 20px;
+    margin: 0 0 20px;
+}
+
+audio {
+    width: 100%;
+    max-width: 400px;
+}
+
+#particles {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 5;
+}
+
+.particle {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    font-size: 30px;
+    animation: explosion 2.8s ease-out forwards;
+}
+
+@keyframes explosion {
+    0% {
+        transform: translate(-50%, -50%) scale(0.2) rotate(0deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform:
+            translate(
+                calc(-50% + var(--x)),
+                calc(-50% + var(--y))
+            )
+            scale(1.5)
+            rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.25);
+    }
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes photoGlow {
+    from {
+        box-shadow: 0 0 15px #812c48;
+    }
+
+    to {
+        box-shadow: 0 0 40px #e65b82;
+    }
+}
+
+#typingText {
+    min-height: 100px;
+    color: #f5d0db;
+    font-size: 25px;
+    line-height: 1.7;
+    margin-top: 35px;
+}
+
+#loveText {
+    animation: loveAppear 2s ease forwards;
+    text-shadow: 0 0 15px #ff4d85;
+}
+
+@keyframes loveAppear {
+    from {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+.countdown-box {
+    margin: 25px auto;
+    color: #f5d0db;
+}
+
+#countdown {
+    font-size: 22px;
+    font-weight: bold;
+    color: #ff8fab;
+    text-shadow: 0 0 12px #ff4d85;
+}
